@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Calibration.unity
+    guid: ad018a057f114de47871729fc0357924
+  - enabled: 1
+    path: Assets/Scenes/Shi Fu Mi.unity
+    guid: a7b23e467c4676a4eb9ef253c3539413
   m_configObjects: {}

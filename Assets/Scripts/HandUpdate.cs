@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Phalange : MonoBehaviour
+public class HandUpdate : MonoBehaviour
 {
     private enum PhalangeObject
     {
@@ -37,13 +37,12 @@ public class Phalange : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.001f);
             fingersRotations = serialManager.GetFingersRotation();
 
             if (phalange == PhalangeObject.thumb1)
             {
                 transform.localEulerAngles = new Vector3(fingersRotations[0],fingersRotations[1],fingersRotations[2]);
-                //Debug.Log(transform.localEulerAngles);
             }
             else if (phalange == PhalangeObject.thumb2)
             {
@@ -105,5 +104,21 @@ public class Phalange : MonoBehaviour
 
         }
         
+    }
+
+    public string GetPlayerSigne()
+    {
+        if(fingersRotations[11] < -70 && fingersRotations[20] < -70 && fingersRotations[29] < -70 && fingersRotations[38] < -70)
+        {
+            return "rock";
+        }
+        else if (fingersRotations[11] > -40 && fingersRotations[20] > -40 && fingersRotations[29] > -40 && fingersRotations[38] > -40)
+        {
+            return "paper";    
+        }
+        else
+        {
+            return "cisor";
+        }
     }
 }
