@@ -39,6 +39,7 @@ public class SerialManager : MonoBehaviour
             try
             {
                 data = "data" + " " + servoEnable[0] + " " + servoEnable[1] + " " + servoEnable[2] + " " + servoEnable[3] + " " + servoEnable[4];
+                print(data);
                 serialPort.Write(data);
                 string[] rotations = serialPort.ReadLine().Split(null);
 
